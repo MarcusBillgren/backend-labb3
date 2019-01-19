@@ -1,0 +1,3 @@
+com\billgren\bean\User.class
+com\billgren\service\UserService.class
+com\billgren\servlet\Labb3Servlet.class
