@@ -1,0 +1,14 @@
+För att säkra upp denna applikation hade följande behövt göras:
+
+Användaren borde få registera sig och få en egen api nyckel för att använda programmet, 
+denna nyckels giltighet valideras sedan på server sidan innan servern kontaktar databasen.
+ 
+Det man också hade behövt göra, om man hade använt sig av en egen api nyckel per användare, hade varit att se till att api nyckeln skickas med i
+huvudet av requesten så att den inte exponeras direkt i adressfältet. 
+
+Om applikationen hade använt https autentisering hade också ökat säkerheten ökat, bland annat då risken för att någon annan ska ha möjlighet att 
+"haka på" användarens anrop till tjänsten hade minskat betydligt.
+
+Vidare hade jag även behövt att validera input parametrarna (namn och yrke) både innan och, för säkerhets skull, 
+efter det att requesten har skickats vidare. 
+I dagsläget sker ingen validering av input och databasen är då, i alla fall i teorin, utsatt för bland annat XSS attacker. 
